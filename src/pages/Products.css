@@ -1,0 +1,662 @@
+
+
+/* ===== PRODUCTS PAGE ===== */
+.products-page {
+    padding: 0;
+    background: #f8f9fa;
+}
+
+/* ===== HERO SECTION ===== */
+.products-hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    background: linear-gradient(135deg, #5B8A9A 0%, #3A6B7A 100%);
+    overflow: hidden;
+}
+
+.products-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+            radial-gradient(circle at 20% 50%, rgba(232, 168, 124, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(232, 168, 124, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.products-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.products-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.products-hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.products-hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.95rem;
+}
+
+/* ===== SECTION COMMON ===== */
+.products-section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #5B8A9A;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #E8A87C;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: -0.5rem auto 3rem;
+    line-height: 1.8;
+}
+
+/* ===== GUTTER STYLES ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #E8A87C, #D48C6B);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.product-card:hover::before {
+    transform: scaleX(1);
+}
+
+.product-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    color: #5B8A9A;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-size {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E8A87C;
+    margin-bottom: 0.3rem;
+}
+
+.product-profile {
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.product-description {
+    color: #777;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.product-tag {
+    display: inline-block;
+    background: rgba(232, 168, 124, 0.1);
+    color: #D48C6B;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===== CUSTOM GUTTERS ===== */
+.custom-section {
+    padding: 3rem 0;
+}
+
+.custom-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: linear-gradient(135deg, #5B8A9A 0%, #7AA8B4 100%);
+    padding: 3rem 4rem;
+    border-radius: 24px;
+    color: white;
+    box-shadow: 0 10px 40px rgba(91, 138, 154, 0.3);
+}
+
+.custom-icon-wrapper {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-icon {
+    font-size: 3rem;
+    color: white;
+}
+
+.custom-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.custom-text p {
+    opacity: 0.95;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.custom-features {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.custom-features span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* ===== DOWN PIPES ===== */
+.downpipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.downpipe-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.downpipe-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.downpipe-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.downpipe-size {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5B8A9A;
+    margin-bottom: 0.3rem;
+}
+
+.downpipe-profile {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* ===== FASCIAS ===== */
+.fascias-section {
+    background: white;
+}
+
+.fascias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fascia-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.fascia-card:hover {
+    border-color: #E8A87C;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.fascia-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.fascia-size {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5B8A9A;
+    margin-bottom: 0.3rem;
+}
+
+.fascia-label {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ===== CUSTOM NOTE ===== */
+.custom-note {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #f8f9fa;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    border-left: 4px solid #E8A87C;
+    margin-top: 1rem;
+}
+
+.custom-note-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.custom-note-text h4 {
+    color: #5B8A9A;
+    margin-bottom: 0.3rem;
+}
+
+.custom-note-text p {
+    color: #666;
+    margin: 0;
+}
+
+/* ===== MAINTENANCE SECTION ===== */
+.maintenance-section {
+    padding: 4rem 0;
+}
+
+.maintenance-content {
+    background: white;
+    padding: 3rem 4rem;
+    border-radius: 24px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.maintenance-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background: rgba(232, 168, 124, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maintenance-icon {
+    font-size: 3rem;
+    color: #E8A87C;
+}
+
+.maintenance-content h2 {
+    color: #5B8A9A;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.maintenance-content > p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.maintenance-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.maintenance-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.maintenance-feature:hover {
+    background: rgba(232, 168, 124, 0.1);
+}
+
+.feature-icon {
+    color: #E8A87C;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.maintenance-feature span {
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* ===== GUARANTEES ===== */
+.products-page .guarantees-section {
+    padding: 4rem 0;
+    background: transparent;
+}
+
+.products-page .guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.products-page .guarantee-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.products-page .guarantee-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(232, 168, 124, 0.05), transparent);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.products-page .guarantee-card:hover::before {
+    transform: scale(1.5);
+}
+
+.products-page .guarantee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.products-page .guarantee-icon {
+    font-size: 3rem;
+    color: #E8A87C;
+    margin-bottom: 0.5rem;
+}
+
+.products-page .guarantee-card h3 {
+    color: #5B8A9A;
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.products-page .guarantee-card p {
+    color: #666;
+    font-weight: 500;
+}
+
+.products-page .guarantee-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #E8A87C;
+    color: #ffffff;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ===== CTA SECTION ===== */
+.products-page .cta-section {
+    background: #5B8A9A;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 24px;
+    margin: 2rem 0 4rem;
+    border-top: none;
+}
+
+.products-page .cta-section h2 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.products-page .cta-section p {
+    color: #d4e4e8;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.products-page .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.products-page .cta-section .btn-primary {
+    background: #E8A87C;
+    color: #ffffff;
+}
+
+.products-page .cta-section .btn-primary:hover {
+    background: #D48C6B;
+    transform: translateY(-3px);
+}
+
+.products-page .cta-section .btn-secondary {
+    border-color: #E8A87C;
+    color: #E8A87C;
+}
+
+.products-page .cta-section .btn-secondary:hover {
+    background: #E8A87C;
+    color: #ffffff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .products-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .custom-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem;
+    }
+
+    .custom-features {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .products-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .products-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .products-hero-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-content {
+        padding: 2rem;
+    }
+
+    .custom-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .custom-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .downpipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fascias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .maintenance-content {
+        padding: 2rem;
+    }
+
+    .maintenance-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .maintenance-features {
+        grid-template-columns: 1fr;
+    }
+
+    .products-page .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    .products-page .guarantees-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-hero-title {
+        font-size: 1.8rem;
+    }
+
+    .products-hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-badge {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .custom-content {
+        padding: 1.5rem;
+    }
+
+    .product-card {
+        padding: 1.5rem;
+    }
+
+    .products-page .cta-section {
+        padding: 2rem 1rem;
+    }
+}

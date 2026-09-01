@@ -1,0 +1,568 @@
+/* ===== CONTACT PAGE ===== */
+.contact-page {
+    padding: 0;
+    background: #f8f9fa;
+}
+
+/* ===== HERO SECTION ===== */
+.contact-hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    background: linear-gradient(135deg, #5B8A9A 0%, #3A6B7A 100%);
+    overflow: hidden;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+            radial-gradient(circle at 20% 50%, rgba(232, 168, 124, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(232, 168, 124, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.contact-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* ===== CONTACT WRAPPER ===== */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem 0;
+}
+
+/* ===== CONTACT INFO SECTION ===== */
+.contact-info-section h2 {
+    color: #5B8A9A;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-description {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.contact-info-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.contact-info-card h4 {
+    color: #5B8A9A;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.contact-info-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+    margin-top: 1rem;
+}
+
+.team-section h3 {
+    color: #5B8A9A;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.team-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.team-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.team-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(232, 168, 124, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.team-info h4 {
+    color: #5B8A9A;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.team-role {
+    color: #E8A87C;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.team-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+}
+
+.team-contact-icon {
+    color: #E8A87C;
+    font-size: 0.8rem;
+}
+
+/* ===== FORM SECTION ===== */
+.contact-form-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h2 {
+    color: #5B8A9A;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-description {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+/* ===== FORM STYLES ===== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #5B8A9A;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-label-icon {
+    color: #E8A87C;
+    font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea {
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #E8A87C;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(232, 168, 124, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #aaa;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ===== FORM SUCCESS ===== */
+.form-success {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #25D366;
+    margin-bottom: 1rem;
+}
+
+.form-success h3 {
+    color: #5B8A9A;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-success p {
+    color: #666;
+}
+
+/* ===== SPINNER ===== */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== HOURS SECTION ===== */
+.hours-section {
+    padding: 4rem 0;
+}
+
+.hours-content {
+    background: white;
+    padding: 3rem 4rem;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hours-icon {
+    font-size: 3rem;
+    color: #E8A87C;
+    margin-bottom: 1rem;
+}
+
+.hours-content h2 {
+    color: #5B8A9A;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hours-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.day {
+    color: #5B8A9A;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.time {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ===== MAP SECTION ===== */
+.map-section {
+    padding: 2rem 0 4rem;
+}
+
+.map-container h2 {
+    color: #5B8A9A;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.map-placeholder {
+    background: #e9ecef;
+    border-radius: 24px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.map-marker {
+    font-size: 4rem;
+    color: #E8A87C;
+    margin-bottom: 1rem;
+}
+
+.map-content h3 {
+    color: #5B8A9A;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.map-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.map-link {
+    display: inline-block;
+    background: #5B8A9A;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.map-link:hover {
+    background: #3A6B7A;
+    transform: translateY(-3px);
+}
+
+/* ===== CTA SECTION ===== */
+.contact-page .cta-section {
+    background: #5B8A9A;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 24px;
+    margin: 2rem 0 4rem;
+    border-top: none;
+}
+
+.contact-page .cta-section h2 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-page .cta-section p {
+    color: #d4e4e8;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-page .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-page .cta-section .btn-primary {
+    background: #E8A87C;
+    color: #ffffff;
+}
+
+.contact-page .cta-section .btn-primary:hover {
+    background: #D48C6B;
+    transform: translateY(-3px);
+}
+
+.contact-page .cta-section .btn-secondary {
+    border-color: #E8A87C;
+    color: #E8A87C;
+}
+
+.contact-page .cta-section .btn-secondary:hover {
+    background: #E8A87C;
+    color: #ffffff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .contact-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .contact-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .contact-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-section {
+        padding: 1.5rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .hours-content {
+        padding: 2rem;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-page .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-page .cta-section {
+        padding: 2rem 1rem;
+    }
+
+    .map-placeholder {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero-title {
+        font-size: 1.8rem;
+    }
+
+    .team-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-contact {
+        justify-content: center;
+    }
+
+    .contact-info-card {
+        padding: 1rem;
+    }
+
+    .map-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .map-marker {
+        font-size: 3rem;
+    }
+}
