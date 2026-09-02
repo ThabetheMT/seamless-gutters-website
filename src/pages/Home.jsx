@@ -30,6 +30,14 @@ import fascia from '../assets/fascia.jpg';
 import commercial from '../assets/homes.jpg';
 
 const Home = () => {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
     const [currentProject, setCurrentProject] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 

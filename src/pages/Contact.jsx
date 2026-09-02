@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { motion } from 'framer-motion';
 import {
     FaPhone,
@@ -13,6 +13,14 @@ import {
 import './Contact.css';
 
 const Contact = () => {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',

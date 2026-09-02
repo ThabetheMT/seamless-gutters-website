@@ -8,9 +8,17 @@ import {
     FaCheckCircle
 } from 'react-icons/fa';
 import './Colours.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const Colours = () => {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
     const colours = [
         { name: 'GEMSBOK SAND', hex: '#D4A574', category: 'Neutral' },
         { name: 'SILVER WHITE', hex: '#E8E8E8', category: 'Neutral' },

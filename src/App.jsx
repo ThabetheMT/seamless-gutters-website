@@ -10,12 +10,14 @@ import Colours from './pages/Colours';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import './App.css';
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   return (
       <Router>
         <div className="App">
           <Navbar />
+            <ScrollToTop />
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />

@@ -17,8 +17,17 @@ import {
     FaStar
 } from 'react-icons/fa';
 import './About.css';
+import {useEffect} from "react";
 
 const About = () => {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
     const milestones = [
         {
             year: '1998',

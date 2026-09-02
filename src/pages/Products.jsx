@@ -10,8 +10,17 @@ import {
     FaCheckCircle
 } from 'react-icons/fa';
 import './Products.css';
+import {useEffect} from "react";
 
 const Products = () => {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
     const gutterStyles = [
         {
             title: 'Industrial Gutters',
