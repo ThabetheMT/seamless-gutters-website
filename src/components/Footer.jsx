@@ -58,7 +58,7 @@ const Footer = () => {
                             <li>✓ 20 Year Material Guarantee</li>
                             <li>✓ 5 Year Workmanship Guarantee</li>
                             <li>✓ Licensed & Insured</li>
-                            <li>✓ Since 1998</li>
+                            <li>✓ Since 2010</li>
                         </ul>
                     </div>
                 </div>

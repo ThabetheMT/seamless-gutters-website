@@ -309,7 +309,7 @@ const Home = () => {
                             </div>
                             <div className="trust-item">
                                 <FaStar className="check-icon" />
-                                <span>Since 1998</span>
+                                <span>Since 2010</span>
                             </div>
                         </motion.div>
                     </motion.div>

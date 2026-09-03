@@ -87,6 +87,7 @@ const About = () => {
         }
     ];
 
+
     const stats = [
         { number: '25+', label: 'Years of Experience', icon: FaCalendarAlt },
         { number: '1000+', label: 'Projects Completed', icon: FaCheckCircle },
