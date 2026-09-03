@@ -8,7 +8,7 @@
 .colours-hero {
     position: relative;
     padding: 8rem 0 5rem;
-    background: linear-gradient(135deg, #5B8A9A 0%, #3A6B7A 100%);
+    background: linear-gradient(135deg, #1877F2 0%, #0D65D9 100%);
     overflow: hidden;
 }
 
@@ -19,8 +19,8 @@
     right: 0;
     bottom: 0;
     background:
-            radial-gradient(circle at 20% 50%, rgba(232, 168, 124, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(232, 168, 124, 0.05) 0%, transparent 50%);
+            radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -49,8 +49,8 @@
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    background: rgba(232, 168, 124, 0.08);
-    border-left: 4px solid #E8A87C;
+    background: rgba(24, 119, 242, 0.08);
+    border-left: 4px solid #1877F2;
     padding: 1.5rem 2rem;
     border-radius: 12px;
     margin: -2rem 0 2rem;
@@ -60,7 +60,7 @@
 }
 
 .notice-icon {
-    color: #E8A87C;
+    color: #1877F2;
     font-size: 1.5rem;
     flex-shrink: 0;
     margin-top: 0.2rem;
@@ -80,7 +80,7 @@
 }
 
 .filter-section h3 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -106,13 +106,13 @@
 }
 
 .filter-btn:hover {
-    border-color: #E8A87C;
-    color: #E8A87C;
+    border-color: #1877F2;
+    color: #1877F2;
 }
 
 .filter-btn.active {
-    background: #E8A87C;
-    border-color: #E8A87C;
+    background: #1877F2;
+    border-color: #1877F2;
     color: white;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .colour-info h3 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 1rem;
     margin-bottom: 0.3rem;
     letter-spacing: 0.5px;
@@ -188,8 +188,8 @@
 
 .colour-category {
     display: inline-block;
-    background: rgba(232, 168, 124, 0.08);
-    color: #D48C6B;
+    background: rgba(24, 119, 242, 0.08);
+    color: #1877F2;
     padding: 2px 12px;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -219,12 +219,12 @@
 
 .chart-icon {
     font-size: 3.5rem;
-    color: #E8A87C;
+    color: #1877F2;
     margin-bottom: 1rem;
 }
 
 .colour-chart-content h2 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -253,13 +253,13 @@
 }
 
 .chart-features svg {
-    color: #E8A87C;
+    color: #1877F2;
     font-size: 1.1rem;
 }
 
 /* ===== CTA SECTION ===== */
 .colours-page .cta-section {
-    background: #5B8A9A;
+    background: #1877F2;
     padding: 4rem 0;
     text-align: center;
     border-radius: 24px;
@@ -274,7 +274,7 @@
 }
 
 .colours-page .cta-section p {
-    color: #d4e4e8;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
@@ -287,23 +287,23 @@
 }
 
 .colours-page .cta-section .btn-primary {
-    background: #E8A87C;
-    color: #ffffff;
+    background: #ffffff;
+    color: #1877F2;
 }
 
 .colours-page .cta-section .btn-primary:hover {
-    background: #D48C6B;
+    background: rgba(255, 255, 255, 0.9);
     transform: translateY(-3px);
 }
 
 .colours-page .cta-section .btn-secondary {
-    border-color: #E8A87C;
-    color: #E8A87C;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 .colours-page .cta-section .btn-secondary:hover {
-    background: #E8A87C;
-    color: #ffffff;
+    background: #ffffff;
+    color: #1877F2;
 }
 
 /* ===== RESPONSIVE ===== */

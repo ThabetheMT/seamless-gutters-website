@@ -8,7 +8,7 @@
 .contact-hero {
     position: relative;
     padding: 8rem 0 5rem;
-    background: linear-gradient(135deg, #5B8A9A 0%, #3A6B7A 100%);
+    background: linear-gradient(135deg, #1877F2 0%, #0D65D9 100%);
     overflow: hidden;
 }
 
@@ -19,8 +19,8 @@
     right: 0;
     bottom: 0;
     background:
-            radial-gradient(circle at 20% 50%, rgba(232, 168, 124, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(232, 168, 124, 0.05) 0%, transparent 50%);
+            radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -54,7 +54,7 @@
 
 /* ===== CONTACT INFO SECTION ===== */
 .contact-info-section h2 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 2.2rem;
     margin-bottom: 0.5rem;
 }
@@ -97,7 +97,7 @@
 }
 
 .contact-info-card h4 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 0.95rem;
     margin-bottom: 0.3rem;
 }
@@ -115,7 +115,7 @@
 }
 
 .team-section h3 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -146,7 +146,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: rgba(232, 168, 124, 0.1);
+    background: rgba(24, 119, 242, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,13 +155,13 @@
 }
 
 .team-info h4 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
 }
 
 .team-role {
-    color: #E8A87C;
+    color: #1877F2;
     font-size: 0.85rem;
     font-weight: 600;
     display: block;
@@ -178,7 +178,7 @@
 }
 
 .team-contact-icon {
-    color: #E8A87C;
+    color: #1877F2;
     font-size: 0.8rem;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .form-container h2 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
@@ -216,7 +216,7 @@
 }
 
 .form-group label {
-    color: #5B8A9A;
+    color: #1877F2;
     font-weight: 600;
     font-size: 0.95rem;
     display: flex;
@@ -225,7 +225,7 @@
 }
 
 .form-label-icon {
-    color: #E8A87C;
+    color: #1877F2;
     font-size: 0.9rem;
 }
 
@@ -244,9 +244,9 @@
 .form-input:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: #E8A87C;
+    border-color: #1877F2;
     background: white;
-    box-shadow: 0 0 0 4px rgba(232, 168, 124, 0.1);
+    box-shadow: 0 0 0 4px rgba(24, 119, 242, 0.1);
 }
 
 .form-input::placeholder,
@@ -285,7 +285,7 @@
 }
 
 .form-success h3 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
@@ -327,12 +327,12 @@
 
 .hours-icon {
     font-size: 3rem;
-    color: #E8A87C;
+    color: #1877F2;
     margin-bottom: 1rem;
 }
 
 .hours-content h2 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 2.2rem;
     margin-bottom: 2rem;
 }
@@ -352,7 +352,7 @@
 }
 
 .day {
-    color: #5B8A9A;
+    color: #1877F2;
     font-weight: 600;
     font-size: 1rem;
 }
@@ -368,7 +368,7 @@
 }
 
 .map-container h2 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -393,12 +393,12 @@
 
 .map-marker {
     font-size: 4rem;
-    color: #E8A87C;
+    color: #1877F2;
     margin-bottom: 1rem;
 }
 
 .map-content h3 {
-    color: #5B8A9A;
+    color: #1877F2;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -410,7 +410,7 @@
 
 .map-link {
     display: inline-block;
-    background: #5B8A9A;
+    background: #1877F2;
     color: white;
     padding: 12px 30px;
     border-radius: 50px;
@@ -420,13 +420,13 @@
 }
 
 .map-link:hover {
-    background: #3A6B7A;
+    background: #0D65D9;
     transform: translateY(-3px);
 }
 
 /* ===== CTA SECTION ===== */
 .contact-page .cta-section {
-    background: #5B8A9A;
+    background: #1877F2;
     padding: 4rem 0;
     text-align: center;
     border-radius: 24px;
@@ -441,7 +441,7 @@
 }
 
 .contact-page .cta-section p {
-    color: #d4e4e8;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
@@ -454,23 +454,23 @@
 }
 
 .contact-page .cta-section .btn-primary {
-    background: #E8A87C;
-    color: #ffffff;
+    background: #ffffff;
+    color: #1877F2;
 }
 
 .contact-page .cta-section .btn-primary:hover {
-    background: #D48C6B;
+    background: rgba(255, 255, 255, 0.9);
     transform: translateY(-3px);
 }
 
 .contact-page .cta-section .btn-secondary {
-    border-color: #E8A87C;
-    color: #E8A87C;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 .contact-page .cta-section .btn-secondary:hover {
-    background: #E8A87C;
-    color: #ffffff;
+    background: #ffffff;
+    color: #1877F2;
 }
 
 /* ===== RESPONSIVE ===== */
