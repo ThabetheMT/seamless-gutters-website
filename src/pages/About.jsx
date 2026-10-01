@@ -14,10 +14,11 @@ import {
     FaWhatsapp,
     FaPhone,
     FaAward,
-    FaStar
+    FaStar,
+    FaFemale
 } from 'react-icons/fa';
 import './About.css';
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 const About = () => {
 
@@ -31,20 +32,20 @@ const About = () => {
     const milestones = [
         {
             year: '1998',
-            title: 'Company Founded',
-            description: 'Seamless Gutters was founded in Pretoria/Tshwane by Steve Loock',
+            title: 'Gutter Division Roots',
+            description: 'Seamless gutter manufacturing expertise dating back to 1998 in Pretoria/Tshwane.',
             icon: '🏗️'
         },
         {
-            year: '2011',
-            title: 'New Leadership',
-            description: 'Ettiene Loock took over operations, joined by Peter Makgoba as director',
-            icon: '👥'
+            year: '2010',
+            title: 'IMVELO Founded',
+            description: 'IMVELO Facility Management Services established by a female entrepreneur born in Tsakane.',
+            icon: '🏢'
         },
         {
-            year: '2024',
-            title: '25+ Years of Excellence',
-            description: 'Over two decades of trusted gutter installation services',
+            year: 'Today',
+            title: 'Gutters + Facility Management',
+            description: 'IMVELO now delivers seamless gutters alongside a full range of facility management services.',
             icon: '🏆'
         }
     ];
@@ -87,12 +88,11 @@ const About = () => {
         }
     ];
 
-
     const stats = [
-        { number: '25+', label: 'Years of Experience', icon: FaCalendarAlt },
+        { number: '2010', label: 'IMVELO Established', icon: FaCalendarAlt },
+        { number: '100%', label: 'Female Owned', icon: FaFemale },
         { number: '1000+', label: 'Projects Completed', icon: FaCheckCircle },
-        { number: '5', label: 'Provinces Covered', icon: FaMapMarker },
-        { number: '100%', label: 'Customer Satisfaction', icon: FaStar }
+        { number: '9+', label: 'Service Categories', icon: FaTools }
     ];
 
     const containerVariants = {
@@ -127,9 +127,9 @@ const About = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="about-hero-title">About Us</h1>
+                        <h1 className="about-hero-title">About IMVELO</h1>
                         <p className="about-hero-subtitle">
-                            Seamless Gutters has been in the gutter business since 1998.
+                            Delivering services above and beyond expectations — 100% female owned, since 2010.
                         </p>
                     </motion.div>
                 </div>
@@ -178,18 +178,22 @@ const About = () => {
                         <div className="story-grid">
                             <div className="story-text">
                                 <p>
-                                    <strong>Seamless Gutters</strong> was founded in <strong>1998</strong> in
-                                    Pretoria/Tshwane by <strong>Steve Loock</strong> after working in the gutter
-                                    industry for many years.
+                                    <strong>IMVELO Facility Management Services</strong> is a <strong>100% female-owned</strong> company,
+                                    proudly founded by an entrepreneur born in <strong>Tsakane</strong>.
+                                    Established in <strong>2010</strong>, our mission has always been to drive
+                                    socioeconomic growth by providing top-tier facility management solutions.
                                 </p>
                                 <p>
-                                    <strong>Ettiene Loock</strong> has since taken over operations and lead,
-                                    joined by <strong>Peter Makgoba</strong> as director in <strong>2011</strong>.
+                                    Over the years, we have successfully partnered with government institutions and
+                                    private sector clients, creating sustainable employment opportunities. Recognising
+                                    a critical gap in the cleaning and facility management industry, we expanded our
+                                    services to offer innovative, high-quality, and client-centric solutions.
                                 </p>
                                 <p>
-                                    With over two decades of experience, we have grown to become a trusted name
-                                    in the gutter installation industry, serving both domestic and industrial
-                                    clients across South Africa.
+                                    Our <strong>Seamless Gutters division</strong> brings together decades of gutter manufacturing
+                                    expertise with IMVELO's commitment to excellence — delivering durable, pre-painted
+                                    Chromadek®, ZINCALUME® and Colorlume® gutter systems for domestic and industrial clients
+                                    across South Africa.
                                 </p>
                             </div>
                             <div className="story-timeline">
@@ -221,9 +225,9 @@ const About = () => {
                     variants={containerVariants}
                 >
                     <motion.div variants={itemVariants}>
-                        <h2 className="section-title">Our Services & Capabilities</h2>
+                        <h2 className="section-title">Our Gutter Capabilities</h2>
                         <p className="section-description">
-                            We provide comprehensive gutter solutions for all types of properties.
+                            We provide comprehensive seamless gutter solutions for all types of properties.
                         </p>
                     </motion.div>
 
@@ -246,6 +250,46 @@ const About = () => {
                                 </motion.div>
                             );
                         })}
+                    </div>
+                </motion.section>
+
+                {/* ===== VISION & MISSION ===== */}
+                <motion.section
+                    className="capabilities-section"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={containerVariants}
+                >
+                    <motion.div variants={itemVariants}>
+                        <h2 className="section-title">Vision & Mission</h2>
+                        <p className="section-description">
+                            What drives us every day at IMVELO.
+                        </p>
+                    </motion.div>
+
+                    <div className="capabilities-grid">
+                        <motion.div className="capability-card" variants={itemVariants} whileHover={{ y: -10 }}>
+                            <div className="capability-icon-wrapper">
+                                <FaStar className="capability-icon" />
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>
+                                To be the most trusted and preferred facility management service provider,
+                                setting the benchmark for quality, innovation, and customer satisfaction in the industry.
+                            </p>
+                        </motion.div>
+                        <motion.div className="capability-card" variants={itemVariants} whileHover={{ y: -10 }}>
+                            <div className="capability-icon-wrapper">
+                                <FaAward className="capability-icon" />
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>
+                                To provide superior facility management services by ensuring safe, fully functional,
+                                and sustainable environments. We leverage cutting-edge technologies and best practices
+                                to maintain operational excellence while exceeding client expectations.
+                            </p>
+                        </motion.div>
                     </div>
                 </motion.section>
 
@@ -290,6 +334,50 @@ const About = () => {
                     </div>
                 </motion.section>
 
+                {/* ===== CORE VALUES ===== */}
+                <motion.section
+                    className="capabilities-section"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={containerVariants}
+                >
+                    <motion.div variants={itemVariants}>
+                        <h2 className="section-title">Our Core Values</h2>
+                        <p className="section-description">
+                            The principles that guide everything we do.
+                        </p>
+                    </motion.div>
+                    <div className="capabilities-grid">
+                        {[
+                            { icon: FaShieldAlt, title: 'Integrity', desc: 'We do what is right, always.' },
+                            { icon: FaUsers, title: 'Collaboration', desc: 'We work together with our clients and communities.' },
+                            { icon: FaStar, title: 'Innovation', desc: 'We embrace cutting-edge technologies and best practices.' },
+                            { icon: FaMedal, title: 'Excellence', desc: 'We deliver world-class quality in every engagement.' },
+                            { icon: FaUsers, title: 'Diversity', desc: 'We celebrate our differences and grow stronger together.' },
+                            { icon: FaCheckCircle, title: 'Ownership', desc: 'We take responsibility for our outcomes.' },
+                            { icon: FaCheckCircle, title: 'Customer Centricity', desc: 'Our clients are at the heart of every decision.' },
+                        ].map((v, i) => {
+                            const Icon = v.icon;
+                            return (
+                                <motion.div
+                                    key={i}
+                                    className="capability-card"
+                                    variants={itemVariants}
+                                    whileHover={{ y: -10 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                >
+                                    <div className="capability-icon-wrapper">
+                                        <Icon className="capability-icon" />
+                                    </div>
+                                    <h3>{v.title}</h3>
+                                    <p>{v.desc}</p>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </motion.section>
+
                 {/* ===== REFERENCES & B-BBEE ===== */}
                 <motion.section
                     className="certifications-section"
@@ -299,7 +387,6 @@ const About = () => {
                     variants={containerVariants}
                 >
                     <motion.div className="certifications-grid" variants={itemVariants}>
-                        {/* References */}
                         <div className="certification-card references-card">
                             <div className="certification-icon-wrapper">
                                 <FaUsers className="certification-icon" />
@@ -311,19 +398,18 @@ const About = () => {
                             </p>
                             <div className="reference-badge">
                                 <FaCheckCircle />
-                                <span>Trusted Since 1998</span>
+                                <span>Trusted Since 2010</span>
                             </div>
                         </div>
 
-                        {/* B-BBEE */}
                         <div className="certification-card bbeee-card">
                             <div className="certification-icon-wrapper">
                                 <FaAward className="certification-icon" />
                             </div>
-                            <h3>B-BBEE Certified</h3>
+                            <h3>B-BBEE & 100% Female Owned</h3>
                             <p>
-                                Seamless Gutters is B-BBEE certified. Please contact us for a copy
-                                of our B-BBEE certificate.
+                                IMVELO is a 100% female-owned company and B-BBEE certified.
+                                Please contact us for a copy of our B-BBEE certificate.
                             </p>
                             <Link to="/contact" className="certification-btn">
                                 Request Certificate →
@@ -341,8 +427,8 @@ const About = () => {
                     variants={containerVariants}
                 >
                     <motion.div className="cta-content" variants={itemVariants}>
-                        <h2>Ready to Work With Us?</h2>
-                        <p>Contact us for a free quote on your gutter project</p>
+                        <h2>Ready to Work With IMVELO?</h2>
+                        <p>Contact us for a free quote on your gutter or facility project</p>
                         <div className="cta-buttons">
                             <Link to="/contact" className="btn-primary">
                                 <FaWhatsapp style={{ marginRight: '8px' }} />

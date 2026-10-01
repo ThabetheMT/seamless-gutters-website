@@ -5,12 +5,13 @@ import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import BackToTop from './components/BackToTop';
 import Home from './pages/Home';
-import Products from './pages/Products';
+import Gutters from './pages/Gutters';
 import Colours from './pages/Colours';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import './App.css';
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import Services from "./pages/Services.jsx";
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/gutters" element={<Gutters />} />
               <Route path="/colours" element={<Colours />} />
               <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </AnimatePresence>

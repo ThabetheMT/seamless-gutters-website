@@ -12,7 +12,7 @@ import {
 import './Products.css';
 import {useEffect} from "react";
 
-const Products = () => {
+const Gutters = () => {
 
     useEffect(() => {
         window.scrollTo({
@@ -78,30 +78,19 @@ const Products = () => {
         }
     };
 
+
     return (
         <div className="page products-page">
-            {/* ===== HERO SECTION ===== */}
             <section className="products-hero">
                 <div className="products-hero-overlay"></div>
                 <div className="container products-hero-content">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h1 className="products-hero-title">Products & Services</h1>
+                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                        <h1 className="products-hero-title">Seamless Gutters</h1>
                         <p className="products-hero-subtitle">
                             All our seamless aluminium gutters are durable and guaranteed
-                            not to fade, leak or rust.
+                            not to fade, leak or rust. Proudly manufactured by IMVELO.
                         </p>
-                        <div className="products-hero-badges">
-                     <span className="hero-badge">
-                     <FaShieldAlt /> 20 Year Material Guarantee
-                     </span>
-                            <span className="hero-badge">
-                     <FaMedal /> 5 Year Workmanship Guarantee
-                     </span>
-                        </div>
+                        {/* ...badges stay the same... */}
                     </motion.div>
                 </div>
             </section>
@@ -338,4 +327,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Gutters;
