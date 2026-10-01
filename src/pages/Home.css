@@ -30,18 +30,14 @@
 }
 
 /* Soft overlay for text readability */
+/* Soft overlay for text readability — plain dark tint */
 .bg-gradient {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-            135deg,
-            rgba(24, 119, 242, 0.7) 0%,
-            rgba(0, 0, 0, 0.3) 50%,
-            rgba(24, 119, 242, 0.7) 100%
-    );
+    background: rgba(0, 0, 0, 0.45);
     z-index: 2;
 }
 
