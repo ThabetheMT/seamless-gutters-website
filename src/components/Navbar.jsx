@@ -1,15 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaWhatsapp, FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import './Navbar.css'
+import './Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null); // 'gutters' | 'services' | null
+    const [isMounted, setIsMounted] = useState(false);
     const location = useLocation();
     const closeTimer = useRef(null);
+
+    // Ensure we only portal after mount (SSR-safe)
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     // Close mobile menu on route change
     useEffect(() => {
@@ -82,12 +89,7 @@ const Navbar = () => {
 
     return (
         <>
-            <motion.nav
-                className={`navbar-modern ${scrolled ? 'scrolled' : ''}`}
-                initial={{ y: -80, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-            >
+            <nav className={`navbar-modern ${scrolled ? 'scrolled' : ''}`}>
                 <div className="nav-container-modern">
                     {/* Logo */}
                     <NavLink to="/" className="logo-modern" onClick={() => setIsOpen(false)}>
@@ -114,13 +116,7 @@ const Navbar = () => {
                                 {({ isActive }) => (
                                     <>
                                         <span>Home</span>
-                                        {isActive && (
-                                            <motion.span
-                                                className="nav-link-underline"
-                                                layoutId="nav-underline"
-                                                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
+                                        {isActive && <span className="nav-link-underline" />}
                                     </>
                                 )}
                             </NavLink>
@@ -218,13 +214,7 @@ const Navbar = () => {
                                     {({ isActive }) => (
                                         <>
                                             <span>{item.label}</span>
-                                            {isActive && (
-                                                <motion.span
-                                                    className="nav-link-underline"
-                                                    layoutId="nav-underline"
-                                                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                                />
-                                            )}
+                                            {isActive && <span className="nav-link-underline" />}
                                         </>
                                     )}
                                 </NavLink>
@@ -271,96 +261,99 @@ const Navbar = () => {
                         </AnimatePresence>
                     </button>
                 </div>
-            </motion.nav>
+            </nav>
 
-            {/* Mobile Drawer */}
-            <AnimatePresence>
-                {isOpen && (
-                    <>
-                        <motion.div
-                            className="mobile-backdrop"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            onClick={() => setIsOpen(false)}
-                        />
-                        <motion.aside
-                            className="mobile-drawer"
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'spring', stiffness: 300, damping: 32 }}
-                        >
-                            <div className="drawer-header">
-                                <span className="drawer-title">Menu</span>
-                            </div>
-
-                            <ul className="drawer-links">
-                                <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.08 }}>
-                                    <NavLink to="/" end className={({ isActive }) => `drawer-link ${isActive ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
-                                        <span>Home</span>
-                                        <FaChevronRight className="drawer-arrow" />
-                                    </NavLink>
-                                </motion.li>
-
-                                {/* Gutters group */}
-                                <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.14 }}>
-                                    <div className="drawer-group-title">Gutters</div>
-                                    {guttersDropdown.map((item) => (
-                                        <NavLink key={item.to} to={item.to} className="drawer-sublink" onClick={() => setIsOpen(false)}>
-                                            <span>{item.label}</span>
-                                            <FaChevronRight className="drawer-arrow" />
-                                        </NavLink>
-                                    ))}
-                                </motion.li>
-
-                                {/* Facility Services group */}
-                                <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
-                                    <div className="drawer-group-title">Facility Services</div>
-                                    {servicesDropdown.map((item) => (
-                                        <NavLink key={item.to} to={item.to} className="drawer-sublink" onClick={() => setIsOpen(false)}>
-                                            <span>{item.label}</span>
-                                            <FaChevronRight className="drawer-arrow" />
-                                        </NavLink>
-                                    ))}
-                                </motion.li>
-
-                                <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.26 }}>
-                                    <NavLink to="/about" className={({ isActive }) => `drawer-link ${isActive ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
-                                        <span>About</span>
-                                        <FaChevronRight className="drawer-arrow" />
-                                    </NavLink>
-                                </motion.li>
-
-                                <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.32 }}>
-                                    <NavLink to="/contact" className={({ isActive }) => `drawer-link ${isActive ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
-                                        <span>Contact</span>
-                                        <FaChevronRight className="drawer-arrow" />
-                                    </NavLink>
-                                </motion.li>
-                            </ul>
-
+            {/* Mobile Drawer — portaled to document.body so it lives OUTSIDE #root */}
+            {isMounted && createPortal(
+                <AnimatePresence>
+                    {isOpen && (
+                        <>
                             <motion.div
-                                className="drawer-cta-wrap"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.45 }}
+                                className="mobile-backdrop"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                onClick={() => setIsOpen(false)}
+                            />
+                            <motion.aside
+                                className="mobile-drawer"
+                                initial={{ x: '100%' }}
+                                animate={{ x: 0 }}
+                                exit={{ x: '100%' }}
+                                transition={{ type: 'spring', stiffness: 300, damping: 32 }}
                             >
-                                <Link to="/contact" className="drawer-cta" onClick={() => setIsOpen(false)}>
-                                    <FaWhatsapp />
-                                    Get a Quote
-                                </Link>
-                            </motion.div>
+                                <div className="drawer-header">
+                                    <span className="drawer-title">Menu</span>
+                                </div>
 
-                            <div className="drawer-footer">
-                                <p>IMVELO Facility Management Services</p>
-                                <p className="drawer-footer-sub">Since 2010 • 100% Female Owned</p>
-                            </div>
-                        </motion.aside>
-                    </>
-                )}
-            </AnimatePresence>
+                                <ul className="drawer-links">
+                                    <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.08 }}>
+                                        <NavLink to="/" end className={({ isActive }) => `drawer-link ${isActive ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
+                                            <span>Home</span>
+                                            <FaChevronRight className="drawer-arrow" />
+                                        </NavLink>
+                                    </motion.li>
+
+                                    {/* Gutters group */}
+                                    <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.14 }}>
+                                        <div className="drawer-group-title">Gutters</div>
+                                        {guttersDropdown.map((item) => (
+                                            <NavLink key={item.to} to={item.to} className="drawer-sublink" onClick={() => setIsOpen(false)}>
+                                                <span>{item.label}</span>
+                                                <FaChevronRight className="drawer-arrow" />
+                                            </NavLink>
+                                        ))}
+                                    </motion.li>
+
+                                    {/* Facility Services group */}
+                                    <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+                                        <div className="drawer-group-title">Facility Services</div>
+                                        {servicesDropdown.map((item) => (
+                                            <NavLink key={item.to} to={item.to} className="drawer-sublink" onClick={() => setIsOpen(false)}>
+                                                <span>{item.label}</span>
+                                                <FaChevronRight className="drawer-arrow" />
+                                            </NavLink>
+                                        ))}
+                                    </motion.li>
+
+                                    <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.26 }}>
+                                        <NavLink to="/about" className={({ isActive }) => `drawer-link ${isActive ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
+                                            <span>About</span>
+                                            <FaChevronRight className="drawer-arrow" />
+                                        </NavLink>
+                                    </motion.li>
+
+                                    <motion.li initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.32 }}>
+                                        <NavLink to="/contact" className={({ isActive }) => `drawer-link ${isActive ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
+                                            <span>Contact</span>
+                                            <FaChevronRight className="drawer-arrow" />
+                                        </NavLink>
+                                    </motion.li>
+                                </ul>
+
+                                <motion.div
+                                    className="drawer-cta-wrap"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.45 }}
+                                >
+                                    <Link to="/contact" className="drawer-cta" onClick={() => setIsOpen(false)}>
+                                        <FaWhatsapp />
+                                        Get a Quote
+                                    </Link>
+                                </motion.div>
+
+                                <div className="drawer-footer">
+                                    <p>IMVELO Facility Management Services</p>
+                                    <p className="drawer-footer-sub">Since 2010 • 100% Female Owned</p>
+                                </div>
+                            </motion.aside>
+                        </>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </>
     );
 };

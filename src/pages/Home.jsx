@@ -43,16 +43,16 @@ const Home = () => {
         { id: 8, title: 'Fascia Installation', image: m29, description: 'New fascia and bargeboard installation' },
     ];
 
-    useEffect(() => {
-        const interval = setInterval(() => setCurrentProject(p => (p + 1) % projects.length), 4000);
-        return () => clearInterval(interval);
-    }, [projects.length]);
-
-    useEffect(() => {
-        const handleMouseMove = (e) => setMousePosition({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight });
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => setCurrentProject(p => (p + 1) % projects.length), 4000);
+    //     return () => clearInterval(interval);
+    // }, [projects.length]);
+    //
+    // useEffect(() => {
+    //     const handleMouseMove = (e) => setMousePosition({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight });
+    //     window.addEventListener('mousemove', handleMouseMove);
+    //     return () => window.removeEventListener('mousemove', handleMouseMove);
+    // }, []);
 
     // Prev / Next handlers
     const nextProject = () => {

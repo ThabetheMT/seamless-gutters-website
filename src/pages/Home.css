@@ -29,8 +29,6 @@
     object-fit: cover;
 }
 
-/* Soft overlay for text readability */
-/* Soft overlay for text readability — plain dark tint */
 .bg-gradient {
     position: absolute;
     top: 0;
@@ -41,12 +39,10 @@
     z-index: 2;
 }
 
-/* Particles - Hidden */
 .particles-container {
     display: none;
 }
 
-/* Floating Elements - Hidden */
 .floating-elements-container,
 .floating-icons-container {
     display: none;
@@ -65,7 +61,6 @@
     color: white;
 }
 
-/* Trust Badge - Glass Effect */
 .trust-badge {
     display: inline-flex;
     align-items: center;
@@ -93,7 +88,6 @@
     font-size: 1.1rem;
 }
 
-/* Hero Headings */
 .hero-text h1 {
     font-size: 4.2rem;
     margin-bottom: 0.5rem;
@@ -118,7 +112,6 @@
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Hero Buttons */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -126,7 +119,6 @@
     margin-bottom: 2.5rem;
 }
 
-/* Trust Indicators */
 .trust-indicators {
     display: flex;
     gap: 2.5rem;
@@ -147,7 +139,6 @@
     font-size: 1.2rem;
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -202,6 +193,7 @@
     transition: all 0.3s;
 }
 
+/* Dark top accent bar (was blue) */
 .service-card::before {
     content: '';
     position: absolute;
@@ -209,7 +201,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(to right, #1877F2, #0D65D9);
+    background: #1a1d21;
     transform: scaleX(0);
     transition: transform 0.3s;
 }
@@ -219,8 +211,8 @@
 }
 
 .service-card:hover .service-icon-wrapper {
-    background: linear-gradient(135deg, rgba(24, 119, 242, 0.15), rgba(24, 119, 242, 0.08));
-    transform: scale(1.1);
+    background: #1a1d21;
+    transform: scale(1.05);
 }
 
 .service-icon {
@@ -228,7 +220,7 @@
 }
 
 .service-card h3 {
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -239,10 +231,11 @@
     margin-bottom: 1rem;
 }
 
+/* Tag: dark on light grey (was blue) */
 .service-tag {
     display: inline-block;
-    background: rgba(24, 119, 242, 0.08);
-    color: #1877F2;
+    background: #1a1d21;
+    color: #ffffff;
     padding: 4px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -272,7 +265,7 @@
 }
 
 .quality-card:hover {
-    border-color: #1877F2;
+    border-color: #1a1d21;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -283,7 +276,7 @@
 }
 
 .quality-card h3 {
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -301,9 +294,10 @@
     flex-wrap: wrap;
 }
 
+/* Feature pills: dark on light grey (was blue) */
 .quality-features span {
-    background: rgba(24, 119, 242, 0.08);
-    color: #1877F2;
+    background: #1a1d21;
+    color: #ffffff;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -338,21 +332,23 @@
     padding: 1.5rem;
     border-radius: 15px;
     font-weight: 600;
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
     cursor: pointer;
+    border: 1px solid #e9ecef;
 }
 
 .location-icon {
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     font-size: 1.2rem;
     transition: all 0.3s;
 }
 
 .location-item:hover {
-    background: #1877F2;
+    background: #1a1d21;
     color: #ffffff;
+    border-color: #1a1d21;
 }
 
 .location-item:hover .location-icon {
@@ -378,13 +374,14 @@
     text-align: center;
     transition: all 0.3s;
     cursor: pointer;
+    border: 1px solid #e9ecef;
 }
 
 .why-icon-wrapper {
     width: 60px;
     height: 60px;
     margin: 0 auto 1rem;
-    background: rgba(24, 119, 242, 0.08);
+    background: #1a1d21; /* dark circle (was light blue) */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -393,17 +390,17 @@
 }
 
 .why-card:hover .why-icon-wrapper {
-    background: rgba(24, 119, 242, 0.15);
+    background: #000000;
     transform: rotate(10deg);
 }
 
 .why-icon {
-    font-size: 2rem;
-    color: #1877F2;
+    font-size: 1.6rem;
+    color: #ffffff; /* white icon on dark circle */
 }
 
 .why-card h4 {
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     margin-bottom: 0.7rem;
 }
 
@@ -427,15 +424,13 @@
     background: #ffffff;
 }
 
-/* Slider wrapper — holds card + side arrows */
 .projects-slider {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
-    padding: 0 80px; /* space for the arrows on the sides */
+    padding: 0 80px;
 }
 
-/* Bigger card */
 .project-card {
     background: white;
     padding: 2.5rem;
@@ -444,7 +439,6 @@
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
-/* Bigger image */
 .project-image-wrapper {
     width: 100%;
     height: 420px;
@@ -466,7 +460,7 @@
 }
 
 .project-card h3 {
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     margin-bottom: 0.75rem;
     font-size: 2rem;
 }
@@ -485,8 +479,9 @@
     flex-wrap: wrap;
 }
 
+/* Badges: dark instead of blue */
 .badge {
-    background: #1877F2;
+    background: #1a1d21;
     color: #ffffff;
     padding: 8px 22px;
     border-radius: 20px;
@@ -519,7 +514,7 @@
 
 .project-arrow:hover {
     background: #ffffff;
-    color: #1877F2;
+    color: #1a1d21;
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
@@ -557,71 +552,27 @@
 
 /* ===== RESPONSIVE — PROJECTS ===== */
 @media (max-width: 900px) {
-    .projects-slider {
-        padding: 0 60px;
-    }
-    .project-image-wrapper {
-        height: 340px;
-    }
-    .project-card h3 {
-        font-size: 1.7rem;
-    }
-    .project-arrow {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
+    .projects-slider { padding: 0 60px; }
+    .project-image-wrapper { height: 340px; }
+    .project-card h3 { font-size: 1.7rem; }
+    .project-arrow { width: 50px; height: 50px; font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) {
-    .projects-slider {
-        padding: 0 20px;
-    }
-    .project-image-wrapper {
-        height: 280px;
-    }
-    .project-card {
-        padding: 1.75rem;
-    }
-    .project-card h3 {
-        font-size: 1.4rem;
-    }
-    .project-description {
-        font-size: 1rem;
-    }
-    /* Put arrows inside the card on mobile */
-    .project-arrow {
-        width: 42px;
-        height: 42px;
-        font-size: 1.1rem;
-    }
-    .project-arrow.prev {
-        left: 0;
-    }
-    .project-arrow.next {
-        right: 0;
-    }
+    .projects-slider { padding: 0 20px; }
+    .project-image-wrapper { height: 280px; }
+    .project-card { padding: 1.75rem; }
+    .project-card h3 { font-size: 1.4rem; }
+    .project-description { font-size: 1rem; }
+    .project-arrow { width: 42px; height: 42px; font-size: 1.1rem; }
 }
 
 @media (max-width: 480px) {
-    .projects-slider {
-        padding: 0 12px;
-    }
-    .project-image-wrapper {
-        height: 220px;
-    }
-    .project-card {
-        padding: 1.25rem;
-        border-radius: 22px;
-    }
-    .project-card h3 {
-        font-size: 1.2rem;
-    }
-    .project-arrow {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-    }
+    .projects-slider { padding: 0 12px; }
+    .project-image-wrapper { height: 220px; }
+    .project-card { padding: 1.25rem; border-radius: 22px; }
+    .project-card h3 { font-size: 1.2rem; }
+    .project-arrow { width: 38px; height: 38px; font-size: 1rem; }
 }
 
 /* ===== GUARANTEES SECTION ===== */
@@ -656,7 +607,7 @@
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(24, 119, 242, 0.05), transparent);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.04), transparent);
     border-radius: 50%;
     transition: all 0.3s;
 }
@@ -669,7 +620,7 @@
     width: 80px;
     height: 80px;
     margin: 0 auto 1rem;
-    background: rgba(24, 119, 242, 0.08);
+    background: #1a1d21;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -677,12 +628,12 @@
 }
 
 .guarantee-icon {
-    font-size: 3rem;
-    color: #1877F2;
+    font-size: 2.2rem;
+    color: #ffffff;
 }
 
 .guarantee-card h3 {
-    color: #1877F2;
+    color: #1a1d21; /* was #1877F2 */
     font-size: 2.2rem;
     margin-bottom: 0.3rem;
 }
@@ -692,10 +643,11 @@
     font-weight: 500;
 }
 
+/* Guarantee badge: dark */
 .guarantee-badge {
     display: inline-block;
     margin-top: 1rem;
-    background: #1877F2;
+    background: #1a1d21;
     color: #ffffff;
     padding: 4px 16px;
     border-radius: 20px;
@@ -752,83 +704,30 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .hero-text h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero-text .highlight {
-        font-size: 2.2rem;
-    }
+    .hero-text h1 { font-size: 3.5rem; }
+    .hero-text .highlight { font-size: 2.2rem; }
 }
 
 @media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-text .highlight {
-        font-size: 1.8rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .trust-badge {
-        font-size: 0.85rem;
-        padding: 8px 18px;
-    }
-
-    .trust-indicators {
-        gap: 1.5rem;
-    }
-
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-text .highlight { font-size: 1.8rem; }
+    .hero-text p { font-size: 1rem; }
+    .trust-badge { font-size: 0.85rem; padding: 8px 18px; }
+    .trust-indicators { gap: 1.5rem; }
     .services-grid,
-    .quality-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .locations-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-
-    .guarantees-grid {
-        grid-template-columns: 1fr;
-    }
-
-
+    .quality-grid { grid-template-columns: 1fr; }
+    .locations-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .cta-section h2 { font-size: 2rem; }
+    .guarantees-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-text .highlight {
-        font-size: 1.5rem;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .locations-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        padding: 1.5rem;
-    }
-
-
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text .highlight { font-size: 1.5rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    .locations-grid { grid-template-columns: 1fr; }
+    .project-card { padding: 1.5rem; }
     .trust-badge {
         font-size: 0.75rem;
         padding: 6px 14px;

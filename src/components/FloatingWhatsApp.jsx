@@ -1,10 +1,21 @@
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const FloatingWhatsApp = () => {
-    return (
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) return null;
+
+    return createPortal(
         <div className="floating-whatsapp">
             <a
-                href="https://wa.me/27822301447"
+                href="https://wa.me/[IMVELO WHATSAPP NUMBER]"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-btn"
@@ -13,7 +24,8 @@ const FloatingWhatsApp = () => {
                 <FaWhatsapp size={28} />
                 <span>Let's Talk</span>
             </a>
-        </div>
+        </div>,
+        document.body
     );
 };
 

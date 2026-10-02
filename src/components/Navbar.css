@@ -486,6 +486,7 @@
         font-size: 1.1rem;
     }
 
+
     .nav-dropdown-wide {
         min-width: 520px;
     }
@@ -552,4 +553,29 @@
     .drawer-sublink {
         font-size: 1rem;
     }
+}
+
+.navbar-modern {
+    animation: navFadeIn 0.5s ease-out;
+}
+
+@keyframes navFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.nav-link-underline {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #E8A87C, #1877F2);
+    animation: underlineFadeIn 0.3s ease-out;
+}
+
+@keyframes underlineFadeIn {
+    from { opacity: 0; transform: scaleX(0.6); }
+    to   { opacity: 1; transform: scaleX(1); }
 }
