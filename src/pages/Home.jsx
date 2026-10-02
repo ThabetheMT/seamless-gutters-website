@@ -9,11 +9,21 @@ import {
 } from 'react-icons/fa';
 import './Home.css';
 
-import heroBg from '../assets/hero-bg.jpg';
-import homes from '../assets/homes.jpg';
-import gutter from '../assets/gutter.jpg';
-import fascia from '../assets/fascia.jpg';
-import commercial from '../assets/homes.jpg';
+import heroBg from '../assets/34.jpg';
+
+import onsiteManufacturing from '../assets/6.jpg';
+import customMadeGutter from '../assets/16.jpg';
+import prePaintedFinishes from '../assets/28.jpg';
+
+import m19 from '../assets/19.jpg';
+import m18 from '../assets/16.jpg';
+import m12 from '../assets/12.jpg';
+import m29 from '../assets/28.jpg';
+
+import m9 from '../assets/9.jpg';
+import m4 from '../assets/4.jpg';
+import m3 from '../assets/3.jpg';
+import m1 from '../assets/1.jpg';
 
 const Home = () => {
     useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, []);
@@ -22,10 +32,15 @@ const Home = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     const projects = [
-        { id: 1, title: 'Residential Installation', image: homes, description: 'Complete gutter system for family home' },
-        { id: 2, title: 'Commercial Project', image: commercial, description: 'Large-scale commercial installation' },
-        { id: 3, title: 'Gutter Replacement', image: gutter, description: 'Modern upgrade for older property' },
-        { id: 4, title: 'Fascia Installation', image: fascia, description: 'New fascia and bargeboard installation' },
+        { id: 1, title: 'Residential Installation', image: m9, description: 'Complete gutter system for family home' },
+        { id: 2, title: 'Commercial Project', image: m3, description: 'Large-scale commercial installation' },
+        { id: 3, title: 'Gutter Replacement', image: m4, description: 'Modern upgrade for older property' },
+        { id: 4, title: 'Fascia Installation', image: m1, description: 'New fascia and bargeboard installation' },
+
+        { id: 5, title: 'Residential Installation', image: m19, description: 'Complete gutter system for family home' },
+        { id: 6, title: 'Commercial Project', image: m18, description: 'Large-scale commercial installation' },
+        { id: 7, title: 'Gutter Replacement', image: m12, description: 'Modern upgrade for older property' },
+        { id: 8, title: 'Fascia Installation', image: m29, description: 'New fascia and bargeboard installation' },
     ];
 
     useEffect(() => {
@@ -39,11 +54,20 @@ const Home = () => {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+    // Prev / Next handlers
+    const nextProject = () => {
+        setCurrentProject((prev) => (prev + 1) % projects.length);
+    };
+
+    const prevProject = () => {
+        setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+    };
+
     // Primary: Gutter services
     const gutterServices = [
-        { icon: '🏗️', title: 'On-Site Manufacturing', desc: 'Gutters manufactured on-site with a mobile factory to the required length and width (domestic and industrial widths).', tag: 'Domestic & Industrial' },
-        { icon: '🔧', title: 'Custom Made Gutters', desc: 'Custom made gutters (up to 1.2m wide) can be ordered and manufactured in our factory and installed.', tag: 'Up to 1.2m Wide' },
-        { icon: '🎨', title: 'Pre-Painted Finishes', desc: 'Gutters, facias and bargeboards are pre-painted inside and outside for maximum durability.', tag: 'Inside & Outside' },
+        { icon: onsiteManufacturing, title: 'On-Site Manufacturing', desc: 'Gutters manufactured on-site with a mobile factory to the required length and width (domestic and industrial widths).', tag: 'Domestic & Industrial' },
+        { icon: customMadeGutter, title: 'Custom Made Gutters', desc: 'Custom made gutters (up to 1.2m wide) can be ordered and manufactured in our factory and installed.', tag: 'Up to 1.2m Wide' },
+        { icon: prePaintedFinishes, title: 'Pre-Painted Finishes', desc: 'Gutters, facias and bargeboards are pre-painted inside and outside for maximum durability.', tag: 'Inside & Outside' },
     ];
 
     // Secondary: IMVELO facility services
@@ -90,7 +114,7 @@ const Home = () => {
 
                 <div className="particles-container">
                     {[...Array(20)].map((_, i) => (
-                        <motion.div key={i} className="particle" /* ...keep existing... */ />
+                        <motion.div key={i} className="particle"  />
                     ))}
                 </div>
 
@@ -166,8 +190,38 @@ const Home = () => {
 
                     <div className="services-grid">
                         {gutterServices.map((s, i) => (
-                            <motion.div key={i} className="service-card" whileHover={{ y: -10, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }} transition={{ type: "spring", stiffness: 300 }}>
-                                <div className="service-icon-wrapper"><div className="service-icon">{s.icon}</div></div>
+                            <motion.div
+                                key={i}
+                                className="service-card"
+                                whileHover={{ y: -10, boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <div className="service-icon-wrapper" style={{ marginBottom: '1rem' }}>
+                                    <div
+                                        className="service-icon"
+                                        style={{
+                                            width: '100%',
+                                            height: '160px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            overflow: 'hidden',
+                                            borderRadius: '14px',
+                                        }}
+                                    >
+                                        <img
+                                            src={s.icon}
+                                            alt={s.title}
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                borderRadius: '14px',
+                                                display: 'block',
+                                            }}
+                                        />
+                                    </div>
+                                </div>
                                 <h3>{s.title}</h3>
                                 <p>{s.desc}</p>
                                 <div className="service-tag">{s.tag}</div>
@@ -289,11 +343,32 @@ const Home = () => {
                     <motion.h2 className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                         Our Projects
                     </motion.h2>
+
                     <div className="projects-slider">
+                        {/* Prev arrow */}
+                        <button
+                            className="project-arrow prev"
+                            onClick={prevProject}
+                            aria-label="Previous project"
+                        >
+                            ‹
+                        </button>
+
                         <AnimatePresence mode="wait">
-                            <motion.div key={currentProject} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} transition={{ duration: 0.6 }} className="project-card">
+                            <motion.div
+                                key={currentProject}
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -50 }}
+                                transition={{ duration: 0.6 }}
+                                className="project-card"
+                            >
                                 <div className="project-image-wrapper">
-                                    <img src={projects[currentProject].image} alt={projects[currentProject].title} className="project-image" />
+                                    <img
+                                        src={projects[currentProject].image}
+                                        alt={projects[currentProject].title}
+                                        className="project-image"
+                                    />
                                 </div>
                                 <h3>{projects[currentProject].title}</h3>
                                 <p className="project-description">{projects[currentProject].description}</p>
@@ -303,9 +378,24 @@ const Home = () => {
                                 </div>
                             </motion.div>
                         </AnimatePresence>
+
+                        {/* Next arrow */}
+                        <button
+                            className="project-arrow next"
+                            onClick={nextProject}
+                            aria-label="Next project"
+                        >
+                            ›
+                        </button>
+
                         <div className="project-dots">
                             {projects.map((_, i) => (
-                                <button key={i} className={`dot ${i === currentProject ? 'active' : ''}`} onClick={() => setCurrentProject(i)} />
+                                <button
+                                    key={i}
+                                    className={`dot ${i === currentProject ? 'active' : ''}`}
+                                    onClick={() => setCurrentProject(i)}
+                                    aria-label={`Go to project ${i + 1}`}
+                                />
                             ))}
                         </div>
                     </div>
